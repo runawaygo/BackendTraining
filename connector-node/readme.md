@@ -34,6 +34,11 @@
 * 用户在新设备上可以获取之前的聊天
 * 用户在新设备上登录将会踢掉之前的通身份登录者
 
+### 技术盲点提示
+* 写uint可以尝试用node，buffer的writeUInt16Be方法，读取类似
+* Socket通讯由于存在多包发送和缓冲区，所以可能会导致断包和粘包问题，实际编码中要注意（node先不处理了）
+* 性能监控可以使用sheel脚本 “ps -p 44878 -o %cpu,%mem” + node的child_process包来合作
+
 ### 架构图
 ![avatar](https://github.com/runawaygo/BackendTraining/blob/master/connector-node/Business%20Architect.png?raw=true)
 
