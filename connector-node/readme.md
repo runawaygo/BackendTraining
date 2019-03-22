@@ -1,10 +1,10 @@
-### 聊天应用则料
+### 聊天应用资料
 
 ### 任务
 * 产品需求探索
   * 确定用户故事
   * 确定必要范围
-  * 确定可能范围
+  * 确定可选范围
 * 进行架构设计
   * 查找技术盲区
   * 设定基础框架
@@ -20,7 +20,7 @@
   * 快速找到瓶颈点
 * 跑起来
   * 连通，将各个服务打通，在不连通数据库的情况，简单模拟数据返回
-  * 实现数据部分完成功能
+  * 实现数据部分，完成下方的五个用户故事
 * 性能测试以及优化
   * 填充数据
   * 根据之前预估的情况对完成后的系统进行压力测试
@@ -36,8 +36,8 @@
 
 ### 技术盲点提示
 * 写uint可以尝试用node，buffer的writeUInt16Be方法，读取类似
-* Socket通讯由于存在多包发送和缓冲区，所以可能会导致断包和粘包问题，实际编码中要注意（node先不处理了）
-* 性能监控可以使用sheel脚本 “ps -p 44878 -o %cpu,%mem” + node的child_process包来合作
+* Socket通讯由于存在多包发送和缓冲区，所以可能会导致断包和粘包问题，nodejs就先不处理了，生产环境的实际编码中要注意
+* 性能监控可以使用node的child_process调用shell脚本 “ps -p 44878 -o %cpu,%mem”来观察应用当前性能
 
 ### 架构图
 ![avatar](https://github.com/runawaygo/BackendTraining/blob/master/connector-node/Business%20Architect.png?raw=true)
